@@ -1,0 +1,9 @@
+.header {
+  background: #1a1525;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/*# sourceMappingURL=header.css.map */

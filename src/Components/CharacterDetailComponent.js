@@ -9,12 +9,14 @@ function CharacterDetailComponent() {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
-  const url = `http://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=aed63c1335e9a5ba42be7f320a3bedd7&hash=4ec35bcedeabc68ce69ef29881e68bea`;
-
   useEffect(() => {
-    axios.get(url).then((res) => {
-      return setItem(res.data.data.results[0]), setLoading(false);
-    });
+    axios
+      .get(
+        `http://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=aed63c1335e9a5ba42be7f320a3bedd7&hash=4ec35bcedeabc68ce69ef29881e68bea`
+      )
+      .then((res) => {
+        return setItem(res.data.data.results[0]), setLoading(false);
+      });
   }, []);
 
   return (

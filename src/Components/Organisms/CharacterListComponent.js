@@ -10,21 +10,23 @@ function ListComponent() {
 
   const [loadMore, setLoadMore] = useState(false);
 
-  const url = `http://gateway.marvel.com/v1/public/characters?limit=30
-  &ts=1&apikey=aed63c1335e9a5ba42be7f320a3bedd7&hash=4ec35bcedeabc68ce69ef29881e68bea`;
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    axios.get(decodeURIComponent(url)).then((res) => {
-      return setCharacters(res.data.data.results), setLoading(false);
-    });
+    axios
+      .get(
+        decodeURIComponent(`http://gateway.marvel.com/v1/public/characters?limit=30
+    &ts=1&apikey=aed63c1335e9a5ba42be7f320a3bedd7&hash=4ec35bcedeabc68ce69ef29881e68bea`)
+      )
+      .then((res) => {
+        return setCharacters(res.data.data.results), setLoading(false);
+      });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   function handleScroll() {
     const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
 
-    if (parseInt(clientHeight + scrollTop) != scrollHeight) {
+    if (parseInt(clientHeight + scrollTop) !== scrollHeight) {
       // do nothing
       return;
     }

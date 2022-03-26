@@ -3,7 +3,6 @@ import { Navigator, Store } from "./Modules";
 import { Recources } from "./Helpers";
 import { Provider } from "react-redux";
 import { Helmet } from "react-helmet";
-import { HeaderComponent } from "./Components";
 
 class App extends React.PureComponent {
   render() {

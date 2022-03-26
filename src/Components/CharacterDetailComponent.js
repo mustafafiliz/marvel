@@ -38,7 +38,7 @@ function CharacterDetailComponent() {
             <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12">
               <h1 className="font-30 p-0 mb-0"> {item.name} </h1>
               <p className="p-0 my-1">
-                {item.description == ""
+                {item.description === ""
                   ? `${item.name} character has no description`
                   : item.description}
               </p>

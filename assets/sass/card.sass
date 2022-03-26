@@ -1,0 +1,28 @@
+@import variables
+.card
+  transition: transform .1s ease-in-out
+  position: relative
+  &:hover
+    transform: scale(1.2)
+  &__title
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    max-width: 200px
+  &__secret_title
+    display: none
+    position: absolute
+    background: $bg-topbar
+    color: $light
+    bottom: 0
+    
+  &:hover &__secret_title
+    display: block !important
+
+    
+   
+
+ 
+   
+
+  

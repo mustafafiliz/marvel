@@ -1,0 +1,17 @@
+.btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #f2f2f2;
+  color: #363044;
+  font-size: 14px;
+  border-radius: 10px;
+}
+.btn--lg {
+  padding: 15px 30px;
+  font-size: 22px;
+}
+.btn--opacity-8 {
+  opacity: 0.7;
+}
+
+/*# sourceMappingURL=button.css.map */

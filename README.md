@@ -14,7 +14,7 @@ marvel-api\
 axios\
 react-helmet\
 react-atomic-design\
-scss/sass\
+scss/sass
 
 # run 
 npm i or npm install\

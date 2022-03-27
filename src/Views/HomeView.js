@@ -1,7 +1,7 @@
 import React from "react";
 
 import { HeaderComponent } from "../Components";
-import { CharacterListComponent } from "../Components/Organisms";
+import { CharacterListOrganism } from "../Components/Organisms";
 
 function HomeView() {
   return (
@@ -10,7 +10,7 @@ function HomeView() {
       <div className="pt-4 pb-5">
         <div className="container">
           <div className="row">
-            <CharacterListComponent />
+            <CharacterListOrganism />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function ComicComponent({ comic }) {
+function ComicMolecule({ comic }) {
   return (
     <div className="card">
       <img
@@ -15,4 +15,4 @@ function ComicComponent({ comic }) {
   );
 }
 
-export default ComicComponent;
+export default ComicMolecule;

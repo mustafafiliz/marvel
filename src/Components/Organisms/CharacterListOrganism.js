@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import GridLoader from "react-spinners/GridLoader";
 import PropagateLoader from "react-spinners/PropagateLoader";
-import { CharacterComponent } from "../Molecules";
+import { CharacterMolecule } from "../Molecules";
 
-function ListComponent() {
+function CharacterListOrganism() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -59,7 +59,7 @@ function ListComponent() {
               className="col-lg-2 col-md-3 col-sm-6 col-xs-6 mt-4"
               key={char.id}
             >
-              <CharacterComponent char={char} />
+              <CharacterMolecule char={char} />
             </div>
           );
         })
@@ -74,4 +74,4 @@ function ListComponent() {
     </>
   );
 }
-export default ListComponent;
+export default CharacterListOrganism;

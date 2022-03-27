@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import GridLoader from "react-spinners/GridLoader";
-import ComicsListComponent from "./Organisms/ComicsListComponent";
+import { ComicsListOrganism } from "./Organisms";
 
 function CharacterDetailComponent() {
   const [item, setItem] = useState([]);
@@ -44,7 +44,7 @@ function CharacterDetailComponent() {
               </p>
               <h2 className="mt-4">Comics</h2>
               <div className="row">
-                <ComicsListComponent id={item.id} />
+                <ComicsListOrganism id={item.id} />
               </div>
             </div>
           </div>

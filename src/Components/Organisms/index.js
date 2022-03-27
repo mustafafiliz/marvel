@@ -1,2 +1,2 @@
-export { default as ComicsListComponent } from "./ComicsListComponent";
-export { default as CharacterListComponent } from "./CharacterListComponent";
+export { default as ComicsListOrganism } from "./ComicsListOrganism";
+export { default as CharacterListOrganism } from "./CharacterListOrganism";

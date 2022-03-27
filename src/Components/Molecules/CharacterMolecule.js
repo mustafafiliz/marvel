@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function CharacterComponent({ char }) {
+function CharacterMolecule({ char }) {
   return (
     <div className="card">
       <img
@@ -17,4 +17,4 @@ function CharacterComponent({ char }) {
   );
 }
 
-export default CharacterComponent;
+export default CharacterMolecule;

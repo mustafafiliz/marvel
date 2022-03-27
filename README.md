@@ -18,10 +18,10 @@ scss/sass
 
 # run 
 npm i or npm install\
-npm run start\
+npm run start
 
 # sass watch
-npm run watch\
+npm run watch
 
 
 

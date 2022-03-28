@@ -34,16 +34,17 @@ function CharacterListOrganism() {
     }
     // set more item
     // limit greater than 100 409 htpp status error code
-    if (limit + 6 > 100) {
+    else if (limit + 6 > 100) {
       console.log("limit greater than 100 409 htpp status error code");
       if (limit != 100) {
         setLimit(100);
         return;
       }
       return;
+    } else {
+      setLoadMore(true);
+      setLimit(limit + 6);
     }
-    setLoadMore(true);
-    setLimit(limit + 6);
   }
 
   return (

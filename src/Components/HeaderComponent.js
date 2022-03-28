@@ -7,7 +7,7 @@ export default class HeaderComponent extends Component {
       <div className="header">
         <div className="container">
           <div className="d-flex align-items-center">
-            <Link to="/" className="mx-1 header__logo">
+            <Link to="/" className="header__logo">
               <img
                 width="120px"
                 height="50px"

@@ -7,21 +7,23 @@ import { CharacterMolecule } from "../Molecules";
 function CharacterListOrganism() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [limit, setLimit] = useState(30);
+  const [offset, setOffset] = useState(0);
   const [loadMore, setLoadMore] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     axios
       .get(
-        decodeURIComponent(`http://gateway.marvel.com/v1/public/characters?limit=30
-    &ts=1&apikey=aed63c1335e9a5ba42be7f320a3bedd7&hash=4ec35bcedeabc68ce69ef29881e68bea`)
+        decodeURIComponent(
+          `http://gateway.marvel.com/v1/public/characters?limit=${limit}&offset=${offset}&ts=1&apikey=aed63c1335e9a5ba42be7f320a3bedd7&hash=4ec35bcedeabc68ce69ef29881e68bea`
+        )
       )
       .then((res) => {
-        return setCharacters(res.data.data.results), setLoading(false);
+        return setCharacters([...res.data.data.results]), setLoading(false);
       });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [limit, offset]);
 
   function handleScroll() {
     const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
@@ -32,18 +34,16 @@ function CharacterListOrganism() {
     }
     // set more item
     // limit greater than 100 409 htpp status error code
-    const newLimit = 100;
-    return (
-      setLoadMore(true),
-      axios
-        .get(
-          `http://gateway.marvel.com/v1/public/characters?limit=${newLimit}
-   &ts=1&apikey=aed63c1335e9a5ba42be7f320a3bedd7&hash=4ec35bcedeabc68ce69ef29881e68bea`
-        )
-        .then((res) => {
-          return setCharacters(res.data.data.results), setLoadMore(false);
-        })
-    );
+    if (limit + 6 > 100) {
+      console.log("limit greater than 100 409 htpp status error code");
+      if (limit != 100) {
+        setLimit(100);
+        return;
+      }
+      return;
+    }
+    setLoadMore(true);
+    setLimit(limit + 6);
   }
 
   return (
@@ -53,7 +53,7 @@ function CharacterListOrganism() {
           <GridLoader color="#f2f2f2" loading={loading} size={30} />
         </div>
       ) : (
-        characters.map((char) => {
+        characters?.map((char) => {
           return (
             <div
               className="col-lg-2 col-md-3 col-sm-6 col-xs-6 mt-4"
